@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+	<head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+html {
+	background: #181818;
+	font-family: Roboto;
+}
+header {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 8vh;
+	background: #121212;
+	justify-content: flex-end;
+}
+header a {
+	text-decoration: none;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+header a span {
+	padding: 15px;
+	font-size: 1.5rem;
+}
+.fadeto-orange {
+	transition-duration: 0.5s;
+}
+.fadeto-orange:hover {
+	color: #f5b342;
+}
+.bork-slogan {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	text-align: center;
+}
+.bork-slogan h2 {
+	font-size: 5rem;
+}
+.bork-slogan h3 {
+	font-size: 3rem;
+}
+.bottom {
+	position: absolute;
+	top: 90vh;
+	// right: 50%;
+	// transform: translateX(50%);
+	// width: 100vw;
+	background: red;
+}
+.bottom svg {}
+</style>
+
+  	<meta charset="utf-8">
+  	<title>Bork - By memers, For memers</title>
+  	<meta name="description" content="The social media site - By memers, For memers">
+  	<meta name="author" content="Bork">
+	</head>
+
+	<body>
+		<header>
+			<a href="/login" class="fadeto-orange">
+				<span>Log In</span>
+			</a>
+			<a href="/signup" class="fadeto-orange">
+				<span>Sign Up</span>
+			</a>
+		</header>
+		<main>
+			<div class="bork-slogan">
+				<h2>Bork</h2>
+				<h3>By memers, for memers</h3>
+			</div>
+		</main>
+	</body>
+</html>

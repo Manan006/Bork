@@ -1,0 +1,128 @@
+<head>
+	<title>Bork Console</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+html,
+body {
+  min-height: 100%;
+	font-size: 1vh;
+}
+
+body {
+  background: #151d21;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.console {
+  position: fixed;
+  font-family: monospace,monospace;
+  color: #fff;
+  width: calc(100% - 3em);
+  max-width: 100%;
+  max-height: calc(100% - 3em);
+  overflow-y: auto;
+  margin: 1em 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5em;
+  box-shadow: 0 0.75em 3em rgba(50, 50, 50, 0.5);
+  z-index: 100;
+  line-height: 1.5;
+}
+
+.console-input {
+  font-family: monospace,monospace;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: calc(100% - 2em);
+  resize: none;
+}
+
+.console-input:before {
+  content: '> ';
+  color: #FC3565;
+  vertical-align: top;
+}
+
+.output-cmd:before {
+  content: '> ';
+  color: #FC3565;
+  vertical-align: top;
+}
+.output-text:before {
+  content: '> ';
+  color: #5F8787;
+  font-weight: 600 !important;
+  vertical-align: top;
+}
+
+.output-text,
+.output-cmd {
+  width: 100%;
+  display: block;
+}
+
+.console-inner {
+  padding: 0.3em 1.1em;
+	vertical-align: top;
+}
+
+.output-text,
+.output-cmd {
+  display: block;
+  white-space: pre;
+}
+
+#outputs div {
+  opacity: 0.85;
+}
+
+#outputs div div {
+  color: #46f01d;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+#outputs a {
+  color: #46f01d;
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.console-inner .output-text#ready {
+  color: #3df5b8;
+  font-style: italic;
+  opacity: 0.75;
+}
+#resultframe {
+	width: 100%;
+	border: none;
+	height: 50vh;
+}
+</style>
+</head>
+<body>
+<div class='console'>
+  <div class='console-inner'>
+    <div id="outputs">
+    </div>
+		<form action="/console/exec" method="POST" target="resultframe">
+    	<div class='output-cmd'><input name="code" id="consoleinput" autofocus class='console-input' placeholder="Type command..."></input></div>
+			<button id="gobtn" style="visibility: hidden"></button>
+		</form>
+  </div>
+	<div class="console-inner">
+		<iframe id="resultframe" name="resultframe"></iframe>
+	</div>
+</div>
+</body>
