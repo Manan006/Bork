@@ -212,7 +212,7 @@ def api_create_account():
 		}
 	)
 	if create_user.success:
-		redirecttoken = methods.create_random(32).content
+		redirecttoken = methods.generateToken(32).content
 		cache.set('redirecttoken', redirecttoken, create_user.content)
 		internalapi.verify.verify.email.sendVerifyEmail(create_user.content)
 		return {"success": True, "logintoken": redirecttoken}

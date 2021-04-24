@@ -26,3 +26,7 @@ def dotroute_home():
 		return render_template('home.html', username=user.username)
 	else:
 		return render_template('login.html')
+
+@app.route('/dot')
+def dot():
+	return render_template("home.html",username="Dot")
